@@ -1,0 +1,11 @@
+POST http://localhost:3001/api/books/ 
+Content-Type: application/json
+
+{
+  "id": 12,
+  "title": "The Hobbit",
+  "imageURL": "https://images-na.ssl-images-amazon.com/images/I/51Zr01Arz%2BL.jpg",
+  "publish": "1937",
+  "author":"J.R.R. Tolkien",
+  "description": "The Hobbit, or There and Back Again, is a children's fantasy novel written by English author J. R. R. Tolkien. It was published on 21 September 1937 as a sequel to The Lord of the Rings: The Fellowship of the Ring, and is generally considered one of the best-selling novels in American history. The story follows the events of Bilbo Baggins, a Hobbit from the Shire, who makes a series of one-night voyages around the world to warn his people of the evil Orcs. The story's antagonist, Smaug the Magnificent, is a large and very dangerous dragon, and Bilbo's eventual fate is determined in the end by the outcome of a battle between the good and the evil forces.",
+}
