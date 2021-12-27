@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const logger = require('../middlewares/loggerMiddlewares')
+const logger = require('../middlewares/loggerMiddlewares.js')
 const { getBooks, getBookId, deleteBook, postNewBook } = require('../routes/routesIndex.js')
 
 // middleware
