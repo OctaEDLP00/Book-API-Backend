@@ -1,8 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const logger = require('./middlewares/loggerMiddlewares.js')
-const { getBooks, getBookId, deleteBook, postNewBook } = require('./routes/routesIndex.js')
+const logger = require('../middlewares/loggerMiddlewares.js')
+const { getBooks, getBookId, deleteBook, postNewBook } = require('../routes/routesIndex.js')
 
 // middleware
 app.use(express.json())
@@ -21,10 +21,6 @@ deleteBook(app)
 postNewBook(app)
 
 const PORT = process.env.PORT || 3001
-
-if (!PORT === undefined || !PORT === null) {
-  PORT = 8081
-}
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
