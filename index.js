@@ -7,7 +7,7 @@ const { getBooks, getBookId, deleteBook, postNewBook } = require('../routes/rout
 // middleware
 app.use(express.json())
 app.use(cors())
-app.use(logger)
+app.use(logger())
 app.use((res, req) => {
   res.status(404).json({
     error: 'Not found'
