@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const { books } = require('./books.js')
+const { books } = require('../books.js')
 
 // routes
 const getBooks = app.get('/api/books', (req, res) => {
