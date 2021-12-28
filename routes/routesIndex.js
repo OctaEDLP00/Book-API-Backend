@@ -3,6 +3,14 @@ const app = express()
 const { books } = require('../books.js')
 
 // routes
+const getBooks = app.get('/', (req, res) => {
+  res.send(`
+    <h1 style="justify-content:center;align-items:center;flex:1;background-color: #fff;">
+      BOOKS API
+    </h1>
+  `)
+})
+
 const getBooks = app.get('/api/books', (req, res) => {
   res.json(books)
 })
