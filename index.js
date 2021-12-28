@@ -8,26 +8,18 @@ const books = require('./books.js')
 app.use(express.json())
 app.use(cors())
 app.use(logger)
-app.use((res, req) => {
-  res.status(404).json({
-    error: 'Not found'
-  })
-})
 
 // routes
-app.get('/', (req, res) => {
-  res.send(`
-    <h1 style="justify-content:center;align-items:center;flex:1;background-color:#fff;">
-      BOOKS API
-    </h1>
-  `)
+app.get('/', (req, res, next) => {
+  res.send('<h1>BOOKS API</h1>')
 })
 
-app.get('/api/books', (req, res) => {
+app.get('/api/books', (req, res, next) => {
   res.json(books)
+  
 })
 
-app.get('/api/books/:id', (req, res) => {
+app.get('/api/books/:id', (req, res, next) => {
   const id = Number(req.params.id)
   const book = books.find(book => book.id === String(id))
 
@@ -38,13 +30,13 @@ app.get('/api/books/:id', (req, res) => {
   }
 })
 
-app.delete('/api/books/:id', (req, res) => {
+app.delete('/api/books/:id', (req, res, next) => {
   const id = Number(req.params.id)
   book.filter(book => book.id !== id)
   res.status(204).end()
 })
 
-app.post('api/books', (req, res) => { 
+app.post('api/books', (req, res, next) => { 
   const book = req.body
 
   if (!book || !book.title) {
@@ -68,7 +60,12 @@ app.post('api/books', (req, res) => {
   books = [...books, newBook]
 
   res.status(201).json(newBook)
+})
 
+app.use((req, res) => {
+  res.status(404).json({
+    error: 'Not found'
+  })
 })
 
 const PORT = process.env.PORT || 3001
