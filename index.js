@@ -21,7 +21,7 @@ app.get('/api/books', (req, res, next) => {
 
 app.get('/api/books/:id', (req, res, next) => {
   const id = Number(req.params.id)
-  const book = books.find(book => book.id === String(id))
+  const book = books.find(book => book.id === id)
 
   if (book) {
     res.json(book)
