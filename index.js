@@ -1,8 +1,9 @@
-const express = require('express')
-const cors = require('cors')
+import express from 'express'
+import cors from 'cors'
+import logger from './middlewares/loggerMiddlewares.js'
+import books from './books.js'
+
 const app = express()
-const logger = require('./middlewares/loggerMiddlewares.js')
-const books = require('./books.js')
 
 // middleware
 app.use(express.json())
