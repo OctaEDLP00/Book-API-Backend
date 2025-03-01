@@ -1,3 +1,8 @@
+/**
+ * @param {import('@types/express').Request} req
+ * @param {import('@types/express').Response} res
+ * @param {import('@types/').NextFunction} next
+ */
 const logger = (req, res, next) => {
   console.log(req.method)
   console.log(req.path)
@@ -6,4 +11,5 @@ const logger = (req, res, next) => {
   next()
 }
 
-module.exports = logger
+export { logger }
+export default logger
