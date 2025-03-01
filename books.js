@@ -1,4 +1,12 @@
-const books = [
+/**
+ * @typedef {{ id: number; title: string; imageURL: string; publish: string; author: string | Array<string>; description?: string;  }} Book
+ * @typedef {Array<Book>} Books
+ */
+
+/**
+ * @type {Books}
+ */
+const BOOKS = [
   {
     id: 1,
     title: "Learning React Native: Building Native Mobile Apps with JavaScript",
@@ -92,4 +100,5 @@ const books = [
   }
 ]
 
-module.exports = books
+export { BOOKS }
+export default BOOKS
